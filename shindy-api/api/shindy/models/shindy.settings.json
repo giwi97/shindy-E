@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shindies",
+  "info": {
+    "name": "shindy"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "categories": {
+      "via": "shindies",
+      "collection": "category"
+    }
+  }
+}
