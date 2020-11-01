@@ -24,13 +24,19 @@ module.exports = function (api) {
     const { data } = await axios.get('http://localhost:1337/shindies')
 
     const collection = actions.addCollection({
-      typeName: 'Events'
+      typeName: 'Event'
     })
 
-    for (const post of data) {
+    for (const event of data) {
       collection.addNode({
-        id: post.id,
-        title: post.title
+        id: event.id,
+        title: event.title,
+        description: event.description,
+        price: event.price,
+        date: event.date,
+        duration: event.duration,
+        //thumbnail: event.image.formats.thumbnail.url,
+        //image: event.image.formats.medium.url
       })
     }
   })
